@@ -17,6 +17,10 @@
 		FAE7725C25A7672400929779 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7725A25A7672400929779 /* ViewModel.swift */; };
 		FAE7726025A7681C00929779 /* ModelTheseFish.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7725F25A7681C00929779 /* ModelTheseFish.swift */; };
 		FAE7726125A7681C00929779 /* ModelTheseFish.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7725F25A7681C00929779 /* ModelTheseFish.swift */; };
+		FAE7727125A8B24500929779 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7727025A8B24500929779 /* Session.swift */; };
+		FAE7727225A8B24500929779 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7727025A8B24500929779 /* Session.swift */; };
+		FAE7727825AB682E00929779 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7727725AB682E00929779 /* DetailView.swift */; };
+		FAE7727925AB682E00929779 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7727725AB682E00929779 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,8 @@
 		FAE7724925A7585900929779 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		FAE7725A25A7672400929779 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		FAE7725F25A7681C00929779 /* ModelTheseFish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTheseFish.swift; sourceTree = "<group>"; };
+		FAE7727025A8B24500929779 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		FAE7727725AB682E00929779 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +71,9 @@
 			children = (
 				FAE7723725A7585900929779 /* TheseFishApp.swift */,
 				FAE7723825A7585900929779 /* ContentView.swift */,
+				FAE7727725AB682E00929779 /* DetailView.swift */,
 				FAE7725A25A7672400929779 /* ViewModel.swift */,
+				FAE7727025A8B24500929779 /* Session.swift */,
 				FAE7725F25A7681C00929779 /* ModelTheseFish.swift */,
 				FAE7723925A7585900929779 /* Assets.xcassets */,
 			);
@@ -195,6 +203,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE7727125A8B24500929779 /* Session.swift in Sources */,
+				FAE7727825AB682E00929779 /* DetailView.swift in Sources */,
 				FAE7724C25A7585900929779 /* ContentView.swift in Sources */,
 				FAE7726025A7681C00929779 /* ModelTheseFish.swift in Sources */,
 				FAE7725B25A7672400929779 /* ViewModel.swift in Sources */,
@@ -206,6 +216,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE7727225A8B24500929779 /* Session.swift in Sources */,
+				FAE7727925AB682E00929779 /* DetailView.swift in Sources */,
 				FAE7724D25A7585900929779 /* ContentView.swift in Sources */,
 				FAE7726125A7681C00929779 /* ModelTheseFish.swift in Sources */,
 				FAE7725C25A7672400929779 /* ViewModel.swift in Sources */,

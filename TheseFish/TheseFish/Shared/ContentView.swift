@@ -12,51 +12,48 @@ struct ContentView: View {
     @State var search: String = ""
     
     var body: some View {
-        VStack(spacing: 5) {
-            HStack{
-                TextField("Enter Text", text: $search)
-                    .border(Color.blue)
-                Button(action: { withAnimation(.easeInOut(duration: 1))
-                    { self.viewModel.searchFish(search) } }, label: {
-                        Text("🔍")
-                    })
-            }
-            .padding(.horizontal, 2.0)
-            .frame(width: 350.0)
-            
-            ScrollView {
-                ContentFish()
-            }
+        NavigationView {
+            VStack(spacing: 5) {
+                HStack{
+                    TextField("Enter Text", text: $search)
+                        .border(Color.blue)
+                    Button(action: { withAnimation(.easeInOut(duration: 1))
+                        { self.viewModel.searchFish(search) } }, label: {
+                            Text("🔍")
+                        })
+                }
+                .frame(width: 350.0)
+                
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 5.0) {
+                        ForEach(viewModel.categories) {card in
+                            cardCategory(card.category ?? "")
+                        }
+                    } .onAppear { self.viewModel.addCategories() }
+                }
+            }.navigationBarTitle(Text("🌏 🐠"))
         }
     }
 }
 
-struct ContentFish: View {
-    var body: some View {
-        VStack(alignment: .leading, spacing: 5.0) {
-            ForEach(0..<10) {
-                cardFish($0)
-            }
-        }
-    }
-}
-
-struct cardFish: View {
-    private let id: Int
-    init(_ id: Int) {
-        self.id = id
+struct cardCategory: View {
+//    let card: Categories
+    private let title: String
+    init(_ title: String) {
+        self.title = title
     }
     
     var body: some View {
-        Text("Item \(id)")
-            .foregroundColor(.white)
-            .font(.largeTitle)
-            .frame(width: 350, height: 200)
-            .background(Color.blue)
+        NavigationLink(destination: DetailView(title: title)) {
+            Text("\(title)")
+                .foregroundColor(.white)
+                .font(.largeTitle)
+                .multilineTextAlignment(.center)
+                .frame(width: 350, height: 200)
+                .background(Color.blue)
+        }
     }
 }
-
-
 
 
 struct ContentView_Previews: PreviewProvider {
