@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
-    var title: String
+    var title: Int
     
     var body: some View {
         Text("\(title)")

@@ -27,7 +27,7 @@ struct ContentView: View {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 5.0) {
                         ForEach(viewModel.categories) {card in
-                            cardCategory(card.category ?? "")
+                            cardCategory(card: card)
                         }
                     } .onAppear { self.viewModel.addCategories() }
                 }
@@ -38,14 +38,11 @@ struct ContentView: View {
 
 struct cardCategory: View {
 //    let card: Categories
-    private let title: String
-    init(_ title: String) {
-        self.title = title
-    }
+    let card: Categories
     
     var body: some View {
-        NavigationLink(destination: DetailView(title: title)) {
-            Text("\(title)")
+        NavigationLink(destination: DetailView(title: card.id)) {
+            Text("\(card.category ?? "")")
                 .foregroundColor(.white)
                 .font(.largeTitle)
                 .multilineTextAlignment(.center)

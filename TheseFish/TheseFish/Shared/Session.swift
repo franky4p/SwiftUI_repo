@@ -66,4 +66,47 @@ final class RequestWiki {
         
         return request
     }
+    
+    static func requestTitleFish() -> URLRequest {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = scheme
+        urlComponents.host = host
+        urlComponents.path = path
+        urlComponents.queryItems = [
+            URLQueryItem(name: "action", value: "query"),
+            URLQueryItem(name: "list", value: "categorymembers"),
+            URLQueryItem(name: "cmtitle", value: "Категория:Рыбы_по_регионам"),
+            //URLQueryItem(name: "redirect_uri", value: "https://ru.wikipedia.org/wiki"),
+            URLQueryItem(name: "format", value: "json")
+        ]
+        
+        let request = URLRequest(url: urlComponents.url!)
+        
+        return request
+    }
+    
+    static func reguestInfoFish(pageid: String) -> URLRequest {
+        //для парсинга инфоблока на странице википедии
+        //https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&pageids=12610483&rvprop=content&rvslots=main&rvsection=0
+        var urlComponents = URLComponents()
+        urlComponents.scheme = scheme
+        urlComponents.host = host
+        urlComponents.path = path
+        urlComponents.queryItems = [
+            URLQueryItem(name: "action", value: "query"),
+            URLQueryItem(name: "prop", value: "revisions"),
+            URLQueryItem(name: "pageids", value: pageid),
+            URLQueryItem(name: "rvprop", value: "content"),
+            URLQueryItem(name: "rvslots", value: "main"),
+            URLQueryItem(name: "rvsection", value: "0"),
+            URLQueryItem(name: "format", value: "json")
+        ]
+        
+        let request = URLRequest(url: urlComponents.url!)
+        
+        return request
+    }
 }
+
+//изображение по id страници
+//https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages&pageids=184842&piprop=thumbnail%7Cname&pithumbsize=100
