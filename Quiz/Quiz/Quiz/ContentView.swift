@@ -33,7 +33,7 @@ struct GameView: View {
         let question = viewModel.newQuestion()
         NavigationView {
             VStack {
-                Text("Вопрос: \(question?.textQuestion ?? "Поздравляю, вы ответили на все вопросы")")
+                Text("\(question?.textQuestion ?? "Игра окончена")")
                 Spacer()
                 Divider()
                 Group {
@@ -51,6 +51,7 @@ struct GameView: View {
         }.navigationBarHidden(true)
     }
 }
+
 
 struct AnswersView: View {
     @EnvironmentObject var viewModel: ViewModel
@@ -73,7 +74,12 @@ struct AnswersView: View {
 struct ResultView: View {
     @EnvironmentObject var viewModel: ViewModel
     var body: some View {
-        Text("Ya result")
+        Text("Результаты проведенных игр").font(.headline)
+        List{
+            ForEach(viewModel.rezult) { value in
+                Text("\(value.id) : \(value.date) -> \(value.rezult)")
+            }
+        }
     }
 }
 

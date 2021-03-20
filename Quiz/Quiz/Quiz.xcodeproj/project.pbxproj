@@ -14,6 +14,7 @@
 		FA347BEC26020C25004F7EA1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA347BEB26020C25004F7EA1 /* ViewModel.swift */; };
 		FA347BF026020CE3004F7EA1 /* ModelQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA347BEF26020CE3004F7EA1 /* ModelQuiz.swift */; };
 		FA347BF326020FE0004F7EA1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA347BF226020FE0004F7EA1 /* Game.swift */; };
+		FA3CEE19260646D400BFAA1C /* RecordsQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CEE18260646D400BFAA1C /* RecordsQuiz.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FA347BEB26020C25004F7EA1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		FA347BEF26020CE3004F7EA1 /* ModelQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelQuiz.swift; sourceTree = "<group>"; };
 		FA347BF226020FE0004F7EA1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		FA3CEE18260646D400BFAA1C /* RecordsQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsQuiz.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		FA347BDA26020522004F7EA1 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				FA3CEE172606469A00BFAA1C /* Memento */,
 				FA347BDB26020522004F7EA1 /* QuizApp.swift */,
 				FA347BDD26020522004F7EA1 /* ContentView.swift */,
 				FA347BEB26020C25004F7EA1 /* ViewModel.swift */,
@@ -76,6 +79,14 @@
 				FA347BE226020524004F7EA1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FA3CEE172606469A00BFAA1C /* Memento */ = {
+			isa = PBXGroup;
+			children = (
+				FA3CEE18260646D400BFAA1C /* RecordsQuiz.swift */,
+			);
+			path = Memento;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +163,7 @@
 				FA347BDE26020522004F7EA1 /* ContentView.swift in Sources */,
 				FA347BEC26020C25004F7EA1 /* ViewModel.swift in Sources */,
 				FA347BDC26020522004F7EA1 /* QuizApp.swift in Sources */,
+				FA3CEE19260646D400BFAA1C /* RecordsQuiz.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,7 @@ struct ModelQuiz {
         //questions.shuffle()
     }
     
+    //TODO хорошо бы переделать на хранение данных в БД
     static func createQuestion() -> Array<Question> {
         var questions = [Question]()
         questions.append(Question(id: 0, textQuestion: "Как называют жесткий компьютерный диск?", correctAnswer: 1,
@@ -24,7 +25,7 @@ struct ModelQuiz {
                                   variantAnswer: [1:"3,5 мб", 2:"2 мб", 3:"1,44 мб", 4:"1,25 мб"]))
         questions.append(Question(id: 2, textQuestion: "Сколько байт в 1 Мбайте?", correctAnswer: 4,
                                   variantAnswer: [1:"1000", 2:"1024", 3:"8192", 4:"1048576"]))
-        questions.append(Question(id: 3, textQuestion: "В каком городе находится штаб-квартира Microsoft?", correctAnswer: 2,
+        questions.append(Question(id: 3, textQuestion: "В каком городе находится штаб-квартира Microsoft?", correctAnswer: 1,
                                   variantAnswer: [1:"Редмонд", 2:"Пало Альто", 3:"Купертино", 4:"Лос Гатос"]))
         questions.append(Question(id: 4, textQuestion: "Сколько bit имеет SEGA Mega Drive?", correctAnswer: 2,
                                   variantAnswer: [1:"8", 2:"16", 3:"32", 4:"64"]))
@@ -43,11 +44,28 @@ struct ModelQuiz {
     }
     
     struct Question: Identifiable  {
-        var id: Int
-        var textQuestion: String
-        var correctAnswer: Int
+        let id: Int
+        let textQuestion: String
+        let correctAnswer: Int
         var variantAnswer: [Int:String]
     }
     
 }
 
+struct RezultGame: Identifiable, Codable {
+    let id: Int
+    let date: Date
+    let rezult: String
+    
+    init() {
+        id = 0
+        date = Date()
+        rezult = "Здесь будет ваш результат"
+    }
+    
+    init(id: Int, date: Date, rezult: String) {
+        self.id = id
+        self.date = date
+        self.rezult = rezult
+    }
+}

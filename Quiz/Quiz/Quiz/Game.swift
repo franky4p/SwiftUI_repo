@@ -12,9 +12,22 @@ final class Game {
     
     static let shared = Game()
     var gameSession: GameSession?
-    var resultGame: Array<String>?
+    var lastQuestion: Int = 0
+    private(set) var resultGame: Array<RezultGame> {
+        didSet {
+            caretaker.saveRecords(resultGame)
+        }
+    }
     
-    private init() {}
+    private let caretaker = RecordsQuize()
+    
+    private init() {
+        resultGame = caretaker.loadResults()
+    }
+    
+    func addRecord(_ record: RezultGame) {
+        resultGame.append(record)
+    }
 }
 
 

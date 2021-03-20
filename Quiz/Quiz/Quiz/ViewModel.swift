@@ -8,6 +8,7 @@
 import SwiftUI
 
 class ViewModel: ObservableObject {
+    //так то хотел хранить состояние игры в модели типа структуры, но по условию нужны классы
     @Published private var model: ModelQuiz = startGame()
     
     static func startGame() -> ModelQuiz {
@@ -19,16 +20,29 @@ class ViewModel: ObservableObject {
         model.questions
     }
     
+    var rezult: Array<RezultGame> {
+        Game.shared.resultGame
+    }
+    
     func newQuestion() -> ModelQuiz.Question? {
         let currentQ = (Game.shared.gameSession?.countQuestion)!
         if currentQ >= model.questions.count {
             return nil
         }
+        
         return model.questions[currentQ]
     }
     
     func resetGame() {
+        safeRezultGame()
         model = ViewModel.startGame()
+    }
+    
+    func safeRezultGame() {
+        let rezult = RezultGame(id: Game.shared.resultGame.count, date: Date(),
+                                rezult: "\(Game.shared.lastQuestion) из \(model.questions.count)")
+        
+        Game.shared.addRecord(rezult)
     }
     
     func Answers(_ question: ModelQuiz.Question?) -> [Int:String] {
@@ -43,8 +57,15 @@ class ViewModel: ObservableObject {
         if idAnswer == 0 {
             resetGame()
         }
-        
-        Game.shared.gameSession?.countQuestion += 1
+        let currentQ = (Game.shared.gameSession?.countQuestion)!
+        if model.questions[currentQ].correctAnswer == idAnswer {
+            Game.shared.gameSession?.countQuestion += 1
+            Game.shared.lastQuestion = currentQ + 1
+        } else {
+            //незамысловатый способ завершить игру
+            Game.shared.gameSession?.countQuestion = model.questions.count + 1
+        }
         self.objectWillChange.send()
     }
+    
 }
