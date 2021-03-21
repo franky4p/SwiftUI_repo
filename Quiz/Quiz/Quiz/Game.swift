@@ -12,7 +12,8 @@ final class Game {
     
     static let shared = Game()
     var gameSession: GameSession?
-    var lastQuestion: Int = 0
+    var shuffleQuestion: Bool = false
+    
     private(set) var resultGame: Array<RezultGame> {
         didSet {
             caretaker.saveRecords(resultGame)
@@ -33,6 +34,7 @@ final class Game {
 
 class GameSession {
     var countQuestion: Int
+    var lastQuestion: Int = 0
     
     init() {
         countQuestion = 0
