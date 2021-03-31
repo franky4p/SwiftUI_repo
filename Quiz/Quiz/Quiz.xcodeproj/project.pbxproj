@@ -15,6 +15,10 @@
 		FA347BF026020CE3004F7EA1 /* ModelQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA347BEF26020CE3004F7EA1 /* ModelQuiz.swift */; };
 		FA347BF326020FE0004F7EA1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA347BF226020FE0004F7EA1 /* Game.swift */; };
 		FA3CEE19260646D400BFAA1C /* RecordsQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CEE18260646D400BFAA1C /* RecordsQuiz.swift */; };
+		FA3CEE1D2607750300BFAA1C /* Utilz.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CEE1C2607750300BFAA1C /* Utilz.swift */; };
+		FA3CEE2026077A0600BFAA1C /* NewQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CEE1F26077A0600BFAA1C /* NewQuestionView.swift */; };
+		FA3CEE232607A5C900BFAA1C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CEE222607A5C900BFAA1C /* SettingsView.swift */; };
+		FA3CEE262607A6AF00BFAA1C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CEE252607A6AF00BFAA1C /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		FA347BEF26020CE3004F7EA1 /* ModelQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelQuiz.swift; sourceTree = "<group>"; };
 		FA347BF226020FE0004F7EA1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		FA3CEE18260646D400BFAA1C /* RecordsQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsQuiz.swift; sourceTree = "<group>"; };
+		FA3CEE1C2607750300BFAA1C /* Utilz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilz.swift; sourceTree = "<group>"; };
+		FA3CEE1F26077A0600BFAA1C /* NewQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionView.swift; sourceTree = "<group>"; };
+		FA3CEE222607A5C900BFAA1C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FA3CEE252607A6AF00BFAA1C /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,10 @@
 				FA347BDB26020522004F7EA1 /* QuizApp.swift */,
 				FA347BDD26020522004F7EA1 /* ContentView.swift */,
 				FA347BEB26020C25004F7EA1 /* ViewModel.swift */,
+				FA3CEE1C2607750300BFAA1C /* Utilz.swift */,
+				FA3CEE1F26077A0600BFAA1C /* NewQuestionView.swift */,
+				FA3CEE252607A6AF00BFAA1C /* GameView.swift */,
+				FA3CEE222607A5C900BFAA1C /* SettingsView.swift */,
 				FA347BF226020FE0004F7EA1 /* Game.swift */,
 				FA347BEF26020CE3004F7EA1 /* ModelQuiz.swift */,
 				FA347BDF26020524004F7EA1 /* Assets.xcassets */,
@@ -161,7 +173,11 @@
 				FA347BF026020CE3004F7EA1 /* ModelQuiz.swift in Sources */,
 				FA347BF326020FE0004F7EA1 /* Game.swift in Sources */,
 				FA347BDE26020522004F7EA1 /* ContentView.swift in Sources */,
+				FA3CEE232607A5C900BFAA1C /* SettingsView.swift in Sources */,
+				FA3CEE262607A6AF00BFAA1C /* GameView.swift in Sources */,
+				FA3CEE1D2607750300BFAA1C /* Utilz.swift in Sources */,
 				FA347BEC26020C25004F7EA1 /* ViewModel.swift in Sources */,
+				FA3CEE2026077A0600BFAA1C /* NewQuestionView.swift in Sources */,
 				FA347BDC26020522004F7EA1 /* QuizApp.swift in Sources */,
 				FA3CEE19260646D400BFAA1C /* RecordsQuiz.swift in Sources */,
 			);

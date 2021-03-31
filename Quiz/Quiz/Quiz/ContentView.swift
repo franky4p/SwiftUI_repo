@@ -13,59 +13,24 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Spacer()
                 NavigationLink(destination: GameView().environmentObject(viewModel)) {
                     Text("Играть").font(.largeTitle)
                 }
                 NavigationLink(destination: ResultView().environmentObject(viewModel)) {
                     Text("Результаты").font(.largeTitle)
                 }
-            }
-        }
-    }
-}
-
-
-struct GameView: View {
-    @EnvironmentObject var viewModel: ViewModel
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
-    var body: some View {
-        let question = viewModel.newQuestion()
-        NavigationView {
-            VStack {
-                Text("\(question?.textQuestion ?? "Игра окончена")")
                 Spacer()
                 Divider()
-                Group {
-                    if question == nil {
-                        Button(action: { self.presentationMode.wrappedValue.dismiss()
-                            viewModel.resetGame()
-                        }, label: {
-                            Text("Закончить игру")
-                        })
-                    } else {
-                        AnswersView(question: question).environmentObject(viewModel)
+                HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 30) {
+                    NavigationLink(destination: SettingsView().environmentObject(viewModel)) {
+                        Text("Настройки")
+                    }
+                    NavigationLink(destination: NewQuestionView().environmentObject(viewModel)) {
+                        Text("Добавить вопрос")
                     }
                 }
             }
-        }.navigationBarHidden(true)
-    }
-}
-
-
-struct AnswersView: View {
-    @EnvironmentObject var viewModel: ViewModel
-    var question: ModelQuiz.Question?
-    
-    var  body: some View {
-        VStack {
-            ForEach(viewModel.Answers(question).sorted(by: <), id: \.key) {key, value in
-                Button(action: { withAnimation(.easeInOut(duration: 1))
-                            { viewModel.checkAnswer(key) } }, label: {
-                                Text("\(key) : \(value)").font(.largeTitle)
-                            })
-            }.padding(2)
-            Divider()
         }
     }
 }
