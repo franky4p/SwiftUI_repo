@@ -9,43 +9,32 @@ import SwiftUI
 
 struct TaskView: View {
     @EnvironmentObject var viewModel: ViewModel
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @State private var itIsTask: Bool = false
     @State private var addTask: Bool = false
+    @State private var selectedTask: Task? = nil
+    
     var task: TaskProtocol
     
     var body: some View {
-        Group {
-            if viewModel.thisIsCategory(task) {
-                List {
-                    ForEach(viewModel.getTask(task as! Composite) , id: \.id) { value in
-                        if viewModel.thisIsCategory(value) {
-                            NavigationLink (destination: TaskView(task: value).environmentObject(viewModel)){
-                                Text("\(value.title)").padding()
-                            }
-                        } else {
-                            Text("\(value.title)").onTapGesture {
-                                itIsTask.toggle()
-                            }.sheet(isPresented: $itIsTask, content: {
-                                TaskView(task: value).environmentObject(viewModel)
-                            })
-                        }
+        List {
+            ForEach(viewModel.getTask(task as! Composite) , id: \.id) { value in
+                if viewModel.thisIsCategory(value) {
+                    NavigationLink (destination: TaskView(task: value).environmentObject(viewModel)){
+                        Text("\(value.title)").padding()
                     }
-                }.navigationBarItems(trailing: Button(action: { addTask.toggle() }) {
-                                        Text("➕")
-                                            .sheet(isPresented: $addTask) {
-                                                AddTaskView(task: task).environmentObject(viewModel)
-                                            }
-                                            .font(.largeTitle) } )
-            } else {
-                VStack {
-                    Text("\(task.title)").font(.largeTitle)
-                    Spacer()
-                    Text("\(task.description)")
-                    Spacer()
-                    Button("Закрыть") { self.presentationMode.wrappedValue.dismiss() }
+                } else {
+                    Text("\(value.title)").onTapGesture {
+                        self.selectedTask = value as? Task
+                    }.padding()
                 }
             }
-        }
+        }.navigationBarItems(trailing: Button(action: { addTask.toggle() }) {
+                                Text("➕")
+                                    .sheet(isPresented: $addTask) {
+                                        AddTaskView(task: task).environmentObject(viewModel)
+                                    }
+                                    .font(.largeTitle) } )
+        .sheet(item: self.$selectedTask) { value in
+            TaskDetailView(task: value) }
     }
 }
+

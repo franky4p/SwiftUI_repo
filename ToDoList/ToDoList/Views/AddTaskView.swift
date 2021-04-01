@@ -13,21 +13,31 @@ struct AddTaskView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var title = ""
     @State private var description: String = ""
+    @State private var itIsTask = false
+    
     var task: TaskProtocol?
     
     var body: some View {
         VStack{
-            Text("Название задачи")
+            Text("Название")
             TextField("Задача", text: $title)
+            if task != nil {
+                Toggle(isOn: $itIsTask){
+                    if itIsTask {
+                        Text("Это задача")
+                    } else {
+                        Text("Это категория") }
+                }.padding()
+            }
             Text("Описание")
             TextEditor(text: $description)
                 .foregroundColor(Color.gray)
                 .disableAutocorrection(true)
-                .border(Color.blue, width: 5)
+                .border(Color.blue, width: 3)
             Divider()
             Spacer()
             Button(action: { withAnimation(.easeInOut(duration: 1))
-            { viewModel.addTask(task: task, title: title, description: description)
+            { viewModel.addTask(task: task, title: title, description: description, itIsTask: itIsTask)
                 self.presentationMode.wrappedValue.dismiss()
             }
             },

@@ -25,6 +25,8 @@
 		FA3CEE6A2614C76B00BFAA1C /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CEE682614C76B00BFAA1C /* AddTaskView.swift */; };
 		FA3CEE6E2614DE4D00BFAA1C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CEE6D2614DE4D00BFAA1C /* Utils.swift */; };
 		FA3CEE6F2614DE4D00BFAA1C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CEE6D2614DE4D00BFAA1C /* Utils.swift */; };
+		FA69172F2615CC0F0008AD49 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA69172E2615CC0F0008AD49 /* TaskDetailView.swift */; };
+		FA6917302615CC0F0008AD49 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA69172E2615CC0F0008AD49 /* TaskDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,7 @@
 		FA3CEE63261494DA00BFAA1C /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		FA3CEE682614C76B00BFAA1C /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		FA3CEE6D2614DE4D00BFAA1C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		FA69172E2615CC0F0008AD49 /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,7 @@
 			children = (
 				FA3CEE2F26147BBA00BFAA1C /* ContentView.swift */,
 				FA3CEE63261494DA00BFAA1C /* TaskView.swift */,
+				FA69172E2615CC0F0008AD49 /* TaskDetailView.swift */,
 				FA3CEE682614C76B00BFAA1C /* AddTaskView.swift */,
 			);
 			path = Views;
@@ -235,6 +239,7 @@
 				FA3CEE5226147D6900BFAA1C /* ModelToDoList.swift in Sources */,
 				FA3CEE4126147BBD00BFAA1C /* ToDoListApp.swift in Sources */,
 				FA3CEE6E2614DE4D00BFAA1C /* Utils.swift in Sources */,
+				FA69172F2615CC0F0008AD49 /* TaskDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +255,7 @@
 				FA3CEE5326147D6900BFAA1C /* ModelToDoList.swift in Sources */,
 				FA3CEE4226147BBD00BFAA1C /* ToDoListApp.swift in Sources */,
 				FA3CEE6F2614DE4D00BFAA1C /* Utils.swift in Sources */,
+				FA6917302615CC0F0008AD49 /* TaskDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

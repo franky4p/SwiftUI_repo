@@ -25,7 +25,7 @@ class RecordsTask {
         }
     }
     
-    func loadResults() -> [Composite] {
+    func loadRecords() -> [Composite] {
         guard let data: Memento = UserDefaults.standard.data(forKey: key) else {
             return []
         }

@@ -13,12 +13,11 @@ class ViewModel: ObservableObject {
     static private let caretakerTask = RecordsTask()
     
     static func createToDoList() -> ListToDo {
-        var tasks = caretakerTask.loadResults()
+        var tasks = caretakerTask.loadRecords()
         if tasks.count == 0 {
-            let task3 = Composite.Task(id: 1, title: "Работа с отягащениями", description: "Качать банки")
             let task2 = Composite(id: 0, title: "Тренажерный зал", description: "Подкачаться")
-            let task1 = Composite(id: 0, title: "Занятие спортом", description: "Все знают, что спорт необходим", tasks: [task2, task3])
-            
+            let task1 = Composite(id: 0, title: "Занятие спортом", description: "Все знают, что спорт необходим")
+            task1.tasks = [task2]
             tasks = [task1]
         }
         
@@ -34,20 +33,20 @@ class ViewModel: ObservableObject {
     }
     
     func thisIsCategory(_ task: TaskProtocol) -> Bool {
-        if task is Composite.Task {
+        if task is Task {
             return false
         } else {
             return true
         }
     }
     
-    func addTask(task: TaskProtocol?, title: String, description: String ) {
-        if task == nil {
-            model.addComposite(task: task, title: title, description: description)
-        } else if task is Composite {
-            model.addComposite(task: task, title: title, description: description)
-        } else if task is Composite.Task {
+    func addTask(task: TaskProtocol?, title: String, description: String , itIsTask: Bool) {
+        if itIsTask, task != nil {
             model.addTask(task: task, title: title, description: description)
+        } else {
+            model.addComposite(task: task, title: title, description: description)
         }
+        
+        ViewModel.caretakerTask.saveRecords(model.toDo)
     }
 }
